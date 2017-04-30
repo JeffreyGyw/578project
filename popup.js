@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 document.addEventListener('DOMContentLoaded', function () {
-      var queryInfo = {
-      active: true,
-      currentWindow: true
-    };
-    chrome.tabs.query(queryInfo, function(tabs) {
-      var tab = tabs[0];
-      var url = tab.url;
-      console.log(url);
-    });
+    //   var queryInfo = {
+    //   active: true,
+    //   currentWindow: true
+    // };
+    // chrome.tabs.query(queryInfo, function(tabs) {
+    //   var tab = tabs[0];
+    //   var url = tab.url;
+    //   console.log(url);
+    // });
 
   document.getElementById('en').addEventListener('click', function(e){
     chrome.tabs.executeScript({file: 'jquery-3.2.1.min.js'});
@@ -23,4 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // });
     // window.close();
   });
+  document.getElementById('show').addEventListener('click', function(e){
+    chrome.tabs.executeScript({file: 'jquery-3.2.1.min.js'});
+    chrome.tabs.create({url: chrome.extension.getURL('notes.html')});
+  });
+
+  // document.getElementById('dis').addEventListener('click', function(e){
+  //     window.close();
+  // });
+
 });
