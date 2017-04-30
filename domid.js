@@ -1,4 +1,16 @@
-$(document.body).on('click', function(event) {
+setYellowBackground = function(e){
+    // $(".hova").removeClass("hova");     
+    // $(e.target).addClass("hova");
+    $(e.target).css("background-color", "yellow");
+  return false;
+};
+
+setWhiteBackground = function(e) {
+    // $(this).removeClass("hova");
+    $(e.target).css("background-color", "white");
+};
+
+addToMonitored = function(event) {
 	alert("You have monitored this");
 	console.log(window.location.href);
 	var obj = new Object();
@@ -25,24 +37,13 @@ $(document.body).on('click', function(event) {
     	});
 	});
 	// chrome.storage.local.clear()
-});
+	$(document.body).children().unbind('mouseover', setYellowBackground); 
+	$(document.body).unbind('click', addToMonitored); 
+	//$(document.body).children().unbind('mouseout'); 
+};
 
-// $(document.body).on('mouseover', function(event) {
-// 	$(event.target).css('background-color', 'red');
-// });
 
-// $(document.body).on('mouseleave', function(event) {
-// 	$(event.target).css('background-color', 'white');
-// });
-
-$(document.body).children().mouseover(function(e){
-    // $(".hova").removeClass("hova");     
-    // $(e.target).addClass("hova");
-    $(e.target).css("background-color", "yellow");
-  return false;
-}).mouseout(function(e) {
-    // $(this).removeClass("hova");
-    $(e.target).css("background-color", "white");
-});
+$(document.body).on('click', addToMonitored);
+$(document.body).children().mouseover(setYellowBackground).mouseout(setWhiteBackground);
 
 
