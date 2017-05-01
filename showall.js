@@ -9,10 +9,10 @@ table.appendChild(tableBody);
 
 var heading = new Array();
 heading[0] = "url";
-heading[1] = "tag";
-heading[2] = "id";
-heading[3] = "class";
-heading[4] = "remove";
+
+heading[1] = "id";
+
+heading[2] = "remove";
 chrome.storage.local.get('monitors', function (result) {
     var marray = result.monitors;
     console.log(marray);
@@ -37,19 +37,19 @@ chrome.storage.local.get('monitors', function (result) {
         td.appendChild(a);
         tr.appendChild(td);
 
-        var td = document.createElement('TD');
-        td.appendChild(document.createTextNode(obj.tagName));
-        tr.appendChild(td);
+        // var td = document.createElement('TD');
+        // td.appendChild(document.createTextNode(obj.tagName));
+        // tr.appendChild(td);
 
         var td = document.createElement('TD');
-        if(obj.id==null) td.appendChild(document.createTextNode(""));
-        else td.appendChild(document.createTextNode(obj.id));
+        if(obj.elementid==null) td.appendChild(document.createTextNode(""));
+        else td.appendChild(document.createTextNode(obj.elementid));
         tr.appendChild(td);
 
-        var td = document.createElement('TD');
-        if(obj.className==null) td.appendChild(document.createTextNode(""));
-        else td.appendChild(document.createTextNode(obj.className));
-        tr.appendChild(td);
+        // var td = document.createElement('TD');
+        // if(obj.className==null) td.appendChild(document.createTextNode(""));
+        // else td.appendChild(document.createTextNode(obj.className));
+        // tr.appendChild(td);
 
         var td = document.createElement('TD');
         var inputElement = document.createElement('input');

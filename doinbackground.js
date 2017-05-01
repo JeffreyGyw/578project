@@ -1,8 +1,8 @@
 setInterval(function(){
-        $.get("http://sample-env-1.cegpykp7aq.us-east-1.elasticbeanstalk.com/?userid=1",function(data){
-	    	console.log(data);
+		console.log("WEEEEEE"); 
+        $.get("http://sample-env-1.cegpykp7aq.us-east-1.elasticbeanstalk.com?userid=1337", function(data) {
 	    	if(data.modified=="true"){
-	    		
+	    		alert("changed");
 	    	}
 	    });
 }, 6000);

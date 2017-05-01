@@ -14,10 +14,13 @@ addToMonitored = function(event) {
 	alert("You have monitored this");
 	console.log(window.location.href);
 	var obj = new Object();
-	obj.id = event.target.id;
-	obj.className = event.target.className;
-	obj.tagName = event.target.tagName;
+	obj.elementid = event.target.id;
 	obj.url = window.location.href;
+    obj.elementclass = event.target.className;
+    obj.elementname = event.target.tagName;
+    obj.currentvalue = event.target.textContent;
+    obj.userid = 1337;
+    obj.update = 0;
 	var jsonstring = JSON.stringify(obj);
 	console.log(jsonstring);
 
@@ -36,6 +39,17 @@ addToMonitored = function(event) {
         	});
     	});
 	});
+ // $.ajax({
+ //   url: "http://sample-env-1.cegpykp7aq.us-east-1.elasticbeanstalk.com/",
+ //   type: 'POST',
+ //   contentType:'application/json',
+ //   data: JSON.stringify(obj),
+ //   dataType:'json'
+ // });
+
+    $.post( "http://sample-env-1.cegpykp7aq.us-east-1.elasticbeanstalk.com/", obj, function( data ) {
+        console.log(data); 
+    });
 
 	// chrome.storage.local.clear()
 	$(document.body).children().unbind('mouseover', setYellowBackground); 
