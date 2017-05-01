@@ -1,5 +1,8 @@
-// setInterval(function(){
-// 	        chrome.storage.local.get('monitors', function (result) {
-//             alert(result.monitors.length+"\n"+JSON.stringify(result.monitors));
-//         });
-// }, 6000);
+setInterval(function(){
+        $.get("http://sample-env-1.cegpykp7aq.us-east-1.elasticbeanstalk.com/?userid=1",function(data){
+	    	console.log(data);
+	    	if(data.modified=="true"){
+	    		
+	    	}
+	    });
+}, 6000);

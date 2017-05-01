@@ -36,6 +36,7 @@ addToMonitored = function(event) {
         	});
     	});
 	});
+
 	// chrome.storage.local.clear()
 	$(document.body).children().unbind('mouseover', setYellowBackground); 
 	$(document.body).unbind('click', addToMonitored); 
