@@ -1,6 +1,6 @@
 {
-  "name": "A browser action with a popup that changes the page color",
-  "description": "Change the current page color",
+  "name": "Change Detector",
+  "description": "Detects the changes of content you choose to monitor on web pages.",
   "version": "1.0",
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "file://*","activeTab","storage", "notifications", "management"
