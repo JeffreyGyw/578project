@@ -56,6 +56,12 @@ chrome.storage.local.get('monitors', function (result) {
         inputElement.type = "button";
         inputElement.value = "remove";
         inputElement.onclick = (function(table,tr,obj,i){
+            obj.delete = 1; 
+            console.log(obj); 
+            $.post( "http://sample-env-1.cegpykp7aq.us-east-1.elasticbeanstalk.com/", obj, function( data ) {
+                console.log(data); 
+            });
+
             return function(){
                 gotoNode(table,tr,obj,i);
             };

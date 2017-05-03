@@ -21,6 +21,7 @@ addToMonitored = function(event) {
     obj.currentvalue = event.target.textContent.trim();
     obj.userid = 1338;
     obj.update = 0;
+    obj.delete = 0; 
 	var jsonstring = JSON.stringify(obj);
 	console.log(jsonstring);
 
@@ -39,13 +40,6 @@ addToMonitored = function(event) {
         	});
     	});
 	});
- // $.ajax({
- //   url: "http://sample-env-1.cegpykp7aq.us-east-1.elasticbeanstalk.com/",
- //   type: 'POST',
- //   contentType:'application/json',
- //   data: JSON.stringify(obj),
- //   dataType:'json'
- // });
 
     $.post( "http://sample-env-1.cegpykp7aq.us-east-1.elasticbeanstalk.com/", obj, function( data ) {
         console.log(data); 
