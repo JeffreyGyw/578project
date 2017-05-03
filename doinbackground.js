@@ -1,5 +1,5 @@
 setInterval(function(){
-        $.get("http://sample-env-1.cegpykp7aq.us-east-1.elasticbeanstalk.com?userid=1338", function(data) {
+        $.get("http://sample-env-1.cegpykp7aq.us-east-1.elasticbeanstalk.com?userid=133", function(data) {
 	    	if(data.modified=="true"){
 				for (var i = 0; i < data.results.length; i++) {
 					console.log(data.results[i]); 
