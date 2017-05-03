@@ -11,7 +11,7 @@ setWhiteBackground = function(e) {
 };
 
 addToMonitored = function(event) {
-	alert("You have monitored this");
+	alert("You have monitored something!");
 	console.log(window.location.href);
 	var obj = new Object();
 	obj.elementid = event.target.id;
@@ -19,7 +19,7 @@ addToMonitored = function(event) {
     obj.elementclass = event.target.className;
     obj.elementname = event.target.tagName;
     obj.currentvalue = event.target.textContent;
-    obj.userid = 1337;
+    obj.userid = 1338;
     obj.update = 0;
 	var jsonstring = JSON.stringify(obj);
 	console.log(jsonstring);
